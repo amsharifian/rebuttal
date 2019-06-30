@@ -25,19 +25,17 @@ The IR-Lib code base is itself factored into a number of Scala packages. These p
 * **config:** This utility package provides Scala interfaces for configuring a generator via a dynamically-scoped parameterization library.
 * **control:** In this package we have implemented all of our control logic to support arbitary dataflow between IR-lib's ndoes.
 * **dataflow:** This RTL package contains different small dataflow to test correctness of IR-lib accelerator's design.
-* **dnn:**
+* **dnn:** This RTL package contains our computation nodes to implement application speicfic accelerators for *dnn workloads*. For instance, we have different implementation of *Systolic arraies* in this branch. Another type of computation nodes which exist in this package is our *Typed node* computation nodes.
 * **FPU:** This RTL package provides wrapers around Floating point operations to be integrated with IR-lib design. At this moment, there are two different wrapers in this package. One is a wraper for berkely hardfloat floating point unit. Second, is a wrapper for embeding Alter's IP cores in our design during FPGA mapping process.
-* **generator:** This RTL package contanis different test cases, generate using our *front-end* to target IR-lib.
-* **interfaces:**
-* **junctions:**
-* **loop:**
-* **memory:**
-* **muxes:**
-* **node:**
-* **regfile:**
-* **stack:**
-* **utility:**
-* **verilogmain:**
+* **generator:** This RTL package contanis different test cases, generate using our *front-end* to target IR-lib. There is a wide range of examples to hammer IR-lib for testing different software test cases. The test cases test IR-lib logics in different scenarios such as arbitary control-flow, nested loops, nested parallel loops, nested parallel loops with arbitary controlflow and so on.
+* **interfaces:** This package contains all the different definition of our intefaces between nodes. These interfaces connect different types of node to eachother. For instance, for connecting two compute node *Databundle* is provided, alternatively for connecting control signals *ControlBundle* is provided.
+* **junctions:** This RTL package includes implementation of  generic 1:N, N:1, and M:N connections.
+All the memory operations in the task are time multiplexed over the junction. There are different implementation of junction in this package. For instance one possible implementation of junctions is a static tree network or a local bus.
+We have parameterized the junction implementations in IR-lib so that the designer can control the physical network that the junction is lowered into.
+* **loop:** This RTL package contains implementation of our special *loop* nodes for controling repetetive execution of the same dataflow. Under this packge we have different implementaiton of notino of software loops. The loop structure not only should capture all the live-ins and live-outs to the loop but also it has be able have support for different type of loops like *serial*, *parallel* and different patterns.
+* **memory:** This RTL packge contains our different memory unit implementaiton of memory units. These units vary from different implementation of *Caches* to *Scratchpad memories*. There are also different implementation of IR-lib memory controlers for different type of data like *Scalar, Tensor2D* and so on.
+* **node:** This RTL package resamble LLVM IR instruction nodes in our design so that we can target arbitary dataflow of computation nodes from our input sofware IR. All these nodes uses *Handhsaking* interface from our *interface* package to talk with other nodes. The logic within each node can vary from a simple ALU operation like addition to more complicated operations like memory address calculation and so on.
+* **utility:** This utility package provides a variety of common Scala and Chisel constructs that are re-used across multiple other packages,
 
 
 ## Getting Started on a Local Ubuntu Machine
