@@ -1,10 +1,42 @@
-# IR-lib
+# IR-Lib
 
 IR-lib is a library of hardware components for auto generating highly configurable parallel dataflow accelerator.
-IR-lib provides implementation of 1) a set of highly configurable and paramertrizable computation nodes, 2) a set of control units to support arbitary control path, 3)A collection configurable Memory structures like Cache, Scratchpad memory and so on. And it also provides a set of standard flexible set of junctions and interfaces to connect different pieces of the design together.
+IR-lib provides implementation of the following hardware units:
+
+1. a set of highly configurable and paramertrizable computation nodes.
+2. a set of control units to support arbitary control path.
+3. A collection configurable Memory structures like Cache, Scratchpad memory and so on.
+4. A set of standard flexible set of junctions and interfaces to connect different pieces of the design together.
 
 
-WARNING: These units are works in progress. They may not be yet completely free of bugs, nor are they fully optimized.
+**WARNING:** These units are works in progress. They may not be yet completely free of bugs, nor are they fully optimized.
+
+## What's in the IR-Lib repository?
+
+The IR-Lib repository contains code that is used to implement a library modular hardware components to build hardware accelerators. Hardware generation is done using Chisel, a hardware construction language embedded in Scala.
+The IR-Lib code base is itself factored into a number of Scala packages. These packages are all found within the src/main/scala directory. Some of these packages provide Scala utilities for generator configuration, while other contain the actual Chisel RTL generators themselves. Here is a brief description of what can be found in each package:
+
+* **accel:**
+* **arbiters:**
+* **concurrent:**
+* **config:**
+* **control:**
+* **dataflow:**
+* **dnn:**
+* **flist:**
+* **FPU:**
+* **generator:**
+* **interfaces:**
+* **junctions:**
+* **loop:**
+* **memory:**
+* **muxes:**
+* **node:**
+* **regfile:**
+* **stack:**
+* **utility:**
+* **verilogmain:**
+
 
 ## Getting Started on a Local Ubuntu Machine
 
