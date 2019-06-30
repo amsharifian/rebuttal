@@ -1,6 +1,10 @@
-# Dandelion-lib
+# IR-lib
 
-Dandelion is a library of hardware components **High Level Synthesis** tools.
+IR-lib is a library of hardware components for auto generating highly configurable parallel dataflow accelerator.
+IR-lib provides implementation of 1) a set of highly configurable and paramertrizable computation nodes, 2) a set of control units to support arbitary control path, 3)A collection configurable Memory structures like Cache, Scratchpad memory and so on. And it also provides a set of standard flexible set of junctions and interfaces to connect different pieces of the design together.
+
+
+WARNING: These units are works in progress. They may not be yet completely free of bugs, nor are they fully optimized.
 
 ## Getting Started on a Local Ubuntu Machine
 
@@ -44,7 +48,7 @@ In the Verilator repository directory, check out a known good version:
 
 ```
 git pull
-git checkout verilator_3_922
+git checkout verilator_4_202
 ```
 
 In the Verilator repository directory, build and install:
@@ -58,32 +62,11 @@ sudo make install
 ```
 
 
-## Dandelion's dependencies
-Dandelion depends on _Berkeley Hardware Floating-Point Units_ for floating nodes. Therefore, before building dandelion you need to clone hardfloat project, build it and then publish it locally on your system. Hardfloat repository has all the necessary information about how to build the project, here we only breifly mention how to build it and then publish it.
+## IR dependencies
+IR-lib depends on _Berkeley Hardware Floating-Point Units_ for floating nodes. Therefore, before building ir you need to clone hardfloat project, build it and then publish it locally on your system. Hardfloat repository has all the necessary information about how to build the project, here we only breifly mention how to build it and then publish it.
 
 ```
-git clone git@csil-git1.cs.surrey.sfu.ca:Dandelion/dandelion-hardfloat-chisel3.git
-cd dandelion-hardfloat-chisel3
-sbt "+publishLocal"
-```
-
-## Compiling Dandelion Accelerator
-We have seperated our harness test cases with the actuall dandelion library implementation. Therefore, for testing or adding your new HLS circuit you need to follow instructions within `dandelion-test` project.
-
-Here we explain how to build dandelion-lib project, so you can use it in another projects. For publishing dandelion-lib you run the following commands:
-
-```shell
-git clone git@csil-git1.cs.surrey.sfu.ca:Dandelion/dandelion-lib.git
-cd dandelion-lib
-sbt "+publishLocal"
-```
-
-The following commands will build dandelion-lib, and then push the compiled version of dandelion-lib to `.ivy2/local` directory. Since, we are still developing dandelion our dandelion versioning finishes with SNAPSHOT keyword.
-The version number you select must end with **SNAPSHOT**, or you must change the version number each time you publish.
-Ivy maintains a cache, and it stores even local projects in that cache.
-If Ivy already has a version cached, it will not check the local repository for updates, unless the version number matches a changing pattern, and SNAPSHOT is one such pattern.
-
-And then for adding dandelion-lib as a dependency to other projects you can add the following line to the build.sbt file:
-```scala
-libraryDependencies += "edu.sfu.arch" %% "dandelion-lib" % "0.1-SNAPSHOT"
+git clone https://github.com/ucb-bar/berkeley-hardfloat.git
+cd berkeley-hardfloat
+sbt "publishLocal"
 ```
