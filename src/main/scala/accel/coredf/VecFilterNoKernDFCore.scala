@@ -1,9 +1,5 @@
 package accel.coredf
 
-/**
-  * Created by nvedula on 28/6/17.
-  */
-
 import accel._
 import chisel3._
 import chisel3.util.Decoupled

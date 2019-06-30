@@ -1,9 +1,5 @@
 package accel.coredf
 
-/**
-  * Created by nvedula on 28/6/17.
-  */
-
 import chisel3._
 import chisel3.util._
 import utility.UniformPrintfs
