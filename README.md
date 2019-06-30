@@ -16,10 +16,13 @@ IR-lib provides implementation of the following hardware units:
 The IR-Lib repository contains code that is used to implement a library modular hardware components to build hardware accelerators. Hardware generation is done using Chisel, a hardware construction language embedded in Scala.
 The IR-Lib code base is itself factored into a number of Scala packages. These packages are all found within the src/main/scala directory. Some of these packages provide Scala utilities for generator configuration, while other contain the actual Chisel RTL generators themselves. Here is a brief description of what can be found in each package:
 
-* **accel:**
-* **arbiters:**
-* **concurrent:**
-* **config:**
+* **accel:** This RTL package contains all the accelerator code used to wrap a dataflow scala file. The top level file is *Accelerator.scala*. It instantiates and connects three helper blocks: *SimpleReg.scala*, *Cache.scala* and *Core.scala*. The relationship of the files is illusterated below:
+
+![Accelerator](./figure/accelerator.png)
+
+* **arbiters:** This RTL package contains a parametrizable set of arbiter implementation that's been used in other packages like: *memory* or *junctions*.
+* **concurrent:** This RTL package contains implementation of our concurrent modules to support higher task level parallelism. For example, our task manager implementaion exists under this package. Different implementation of task controller can be found under this package.
+* **config:** This utility package provides Scala interfaces for configuring a generator via a dynamically-scoped parameterization library.
 * **control:**
 * **dataflow:**
 * **dnn:**
