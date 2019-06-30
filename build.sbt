@@ -1,6 +1,6 @@
-name := "dandelion-lib"
+name := "ir-lib"
 
-organization := "edu.sfu.arch"
+organization := "edu.noname.arch"
 
 version := "0.1-SNAPSHOT"
 
@@ -38,8 +38,9 @@ resolvers ++= Seq(
 
 // Provide a managed dependency on X if -DXVersion="" is supplied on the command line.
 val defaultVersions = Map(
-  "chisel3" -> "3.1.+",
-  "chisel-iotesters" -> "1.2.+",
+  "chisel3" -> "3.2-SNAPSHOT",
+  /*"chisel-iotesters" -> "1.2.+",*/
+  "chisel-iotesters" -> "1.3-SNAPSHOT",
   "dsptools" -> "1.1.8"
 )
 
@@ -55,7 +56,7 @@ libraryDependencies ++= Seq(
 
 // Berkley hardfloat. locally published (built with chisel2 scala 2.11)
 //libraryDependencies ++= Seq("edu.berkeley.cs" %% "dsptools" % "1.2-SNAPSHOT")
-libraryDependencies ++= Seq("edu.berkeley.cs" %% "hardfloat" % "1.2")
+libraryDependencies ++= Seq("edu.berkeley.cs" %% "hardfloat" % "1.2-SNAPSHOT")
 
 
 resolvers ++= Seq(

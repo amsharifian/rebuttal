@@ -19,22 +19,22 @@ import interfaces._
 
 
 // Tester.
-class CORDICALUTester(df: CORDICALU)
-                     (implicit p: config.Parameters) extends DspTester(df) {
+//class CORDICALUTesterCustom(df: CORDICALU)
+                     //(implicit p: config.Parameters) extends DspTester(df) {
 
 
-  poke(df.io.in1, 0x62.U)
-  poke(df.io.in2, 0x62.U)
-  print(s"${peek(df.io.out)}")
+  //poke(df.io.in1, 0x62.U)
+  //poke(df.io.in2, 0x62.U)
+  //print(s"${peek(df.io.out)}")
 
-}
+//}
 
-class CORDICALUTests extends FlatSpec with Matchers {
-  implicit val p = config.Parameters.root((new MiniConfig).toInstance)
-  it should "ALU tester" in {
-    chisel3.iotesters.Driver.execute(Array("--backend-name", "verilator", "--target-dir", "test_run_dir"),
-      () => new CORDICALU(16, 4, opCode = "sin")) {
-      c => new CORDICALUTester(c)
-    } should be(true)
-  }
-}
+//class CORDICALUTests extends FlatSpec with Matchers {
+  //implicit val p = config.Parameters.root((new MiniConfig).toInstance)
+  //it should "ALU tester" in {
+    //chisel3.iotesters.Driver.execute(Array("--backend-name", "verilator", "--target-dir", "test_run_dir"),
+      //() => new CORDICALU(16, 4, opCode = "sin")) {
+      //c => new CORDICALUTesterCustom(c)
+    //} should be(true)
+  //}
+//}

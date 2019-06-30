@@ -149,7 +149,7 @@ class test04Test01[T <: test04MainIO](c: T) extends PeekPokeTester(c) {
 
 class test04Tester extends FlatSpec with Matchers {
   implicit val p = config.Parameters.root((new MiniConfig).toInstance)
-  it should "Check that test03 works correctly." in {
+  it should "Check that test04 works correctly." in {
     // iotester flags:
     // -ll  = log level <Error|Warn|Info|Debug|Trace>
     // -tbn = backend <firrtl|verilator|vcs>

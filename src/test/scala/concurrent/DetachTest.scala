@@ -80,25 +80,25 @@ class DetachTests(c: Detach) extends PeekPokeTester(c) {
   }
 }
 
-class DetachTester extends FlatSpec with Matchers {
-  implicit val p = config.Parameters.root((new MiniConfig).toInstance)
-  var tbn = "verilator"
-//  var tbn = "firrtl"
+//class DetachTester extends FlatSpec with Matchers {
+  //implicit val p = config.Parameters.root((new MiniConfig).toInstance)
+  //var tbn = "verilator"
+////  var tbn = "firrtl"
 
-  it should "Pass task requests and responses and generate sync increment pulse." in {
-    // iotestester flags:
-    // -ll  = log level <Error|Warn|Info|Debug|Trace>
-    // -tbn = backend <firrtl|verilator|vcs>
-    // -td  = target directory
-    // -tts = seed for RNG
-    chisel3.iotesters.Driver.execute(
-      Array(//"-ll", "Info",
-        "-tbn", tbn,
-        "-td", "test_run_dir",
-        "-tts", "0001"),
-      () => new Detach(ID = 0)) {
-      c => new DetachTests(c)
-    } should be(true)
-  }
+  //it should "Pass task requests and responses and generate sync increment pulse." in {
+    //// iotestester flags:
+    //// -ll  = log level <Error|Warn|Info|Debug|Trace>
+    //// -tbn = backend <firrtl|verilator|vcs>
+    //// -td  = target directory
+    //// -tts = seed for RNG
+    //chisel3.iotesters.Driver.execute(
+      //Array(//"-ll", "Info",
+        //"-tbn", tbn,
+        //"-td", "test_run_dir",
+        //"-tts", "0001"),
+      //() => new Detach(ID = 0)) {
+      //c => new DetachTests(c)
+    //} should be(true)
+  //}
 
-}
+//}

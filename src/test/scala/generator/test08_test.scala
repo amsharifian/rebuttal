@@ -130,7 +130,7 @@ class test08Test01[T <: test08MainIO](c: T) extends PeekPokeTester(c) {
   }
 
 
-  dumpMemory("mem.init")
+  dumpMemory("init.mem")
 
 
   // Initializing the signals
