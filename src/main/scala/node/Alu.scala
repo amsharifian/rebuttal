@@ -10,6 +10,8 @@ import dsptools.numbers.implicits._
 import dsptools.DspContext
 import dsptools.numbers.RealTrig
 
+import scala.math.{max, min}
+
 
 /**
   * List of compute operations which we can support
@@ -162,8 +164,8 @@ class UALU(val xlen: Int, val opCode: String, val issign: Boolean = false) exten
       AluOpCode.Or -> (io.in1 | io.in2),
       AluOpCode.Xor -> (io.in1 ^ io.in2),
       AluOpCode.Xnor -> (~(io.in1 ^ io.in2)),
-      AluOpCode.ShiftLeft -> (io.in1 << io.in2(in2S.getWidth - 1, 0)),
-      AluOpCode.ShiftRight -> (io.in1 >> io.in2(in2S.getWidth - 1, 0)),
+      AluOpCode.ShiftLeft -> (io.in1 << io.in2(min(in2S.getWidth - 1, 8), 0)),
+      AluOpCode.ShiftRight -> (io.in1 >> io.in2(min(in2S.getWidth - 1, 8), 0)),
       AluOpCode.ShiftRightLogical -> (io.in1.asUInt >> io.in2(in2S.getWidth - 1, 0)).asUInt, // Chisel only performs arithmetic right-shift on SInt
       AluOpCode.ShiftRightArithmetic -> (io.in1.asSInt >> io.in2(in2S.getWidth - 1, 0)).asUInt, // Chisel only performs arithmetic right-shift on SInt
       AluOpCode.LT -> (io.in1.asUInt < io.in2.asUInt),
