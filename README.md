@@ -18,7 +18,7 @@ The IR-Lib code base is itself factored into a number of Scala packages. These p
 
 * **accel:** This RTL package contains all the accelerator code used to wrap a dataflow scala file. The top level file is *Accelerator.scala*. It instantiates and connects three helper blocks: *SimpleReg.scala*, *Cache.scala* and *Core.scala*. The relationship of the files is illusterated below:
 
-![Accelerator](https://anonymous.4open.science/repository/63817ad2-378d-44cb-a655-35e52aa750f6/doc/figures/accelerator-resize.png)
+![Accelerator](https://raw.githubusercontent.com/amsharifian/rebuttal/master/doc/figures/accelerator-resize.png)
 
 * **arbiters:** This RTL package contains a parametrizable set of arbiter implementation that's been used in other packages like: *memory* or *junctions*.
 * **concurrent:** This RTL package contains implementation of our concurrent modules to support higher task level parallelism. For example, our task manager implementaion exists under this package. Different implementation of task controller can be found under this package.
