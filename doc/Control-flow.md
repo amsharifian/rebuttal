@@ -6,3 +6,5 @@ In the loop case, loop’s interface to the outside is live-in and live-out regi
 Trigger units are merge point of all control signals. Base on the input values trigger unit decides if it fires true value or false value.
 
 ![Control Example](https://www.dropbox.com/s/fjeq0z0k3a27ta3/Controlflow.png?raw=1)
+
+![Serial Loop](https://www.dropbox.com/s/ohobbax6e2b5lf3/Serial-Loop.png?raw=1)

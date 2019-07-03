@@ -34,6 +34,7 @@ The IR-Lib code base is itself factored into a number of Scala packages. These p
 * **control:** In this package we have implemented all of our control logic to support arbitary dataflow between IR-lib's ndoes.
 
     * [Controlflow](./doc/Control-flow.md)
+    * [Parallel Loop](./doc/Parallel-loop.md)
 
 * **arbiters:** This RTL package contains a parametrizable set of arbiter implementation that's been used in other packages like: *memory* or *junctions*.
 * **concurrent:** This RTL package contains implementation of our concurrent modules to support higher task level parallelism. For example, our task manager implementaion exists under this package. Different implementation of task controller can be found under this package.
