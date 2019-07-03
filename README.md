@@ -20,7 +20,7 @@ The IR-Lib code base is itself factored into a number of Scala packages. These p
 
     To read more about IR-lib acceleartor desing and SoC interface, please read the following document:
 
-    [Accelerator Interface](./doc/Soc-Interface.md)
+    * [Accelerator Interface](./doc/Soc-Interface.md)
 
 ![Accelerator](https://www.dropbox.com/s/q600al5gt2yo91i/accelerator-resize.png?raw=1)
 
@@ -28,12 +28,16 @@ The IR-Lib code base is itself factored into a number of Scala packages. These p
 * **node:** This RTL package resamble LLVM IR instruction nodes in our design so that we can target arbitary dataflow of computation nodes from our input sofware IR. All these nodes uses *Handhsaking* interface from our *interface* package to talk with other nodes. The logic within each node can vary from a simple ALU operation like addition to more complicated operations like memory address calculation and so on.
 
     To read more about IR-lib node's desing, please read the following document:
-    [IR Node design](./doc/Node.md)
+
+    * [IR Node design](./doc/Node.md)
+
+* **control:** In this package we have implemented all of our control logic to support arbitary dataflow between IR-lib's ndoes.
+
+    * [Controlflow](./doc/Control-flow.md)
 
 * **arbiters:** This RTL package contains a parametrizable set of arbiter implementation that's been used in other packages like: *memory* or *junctions*.
 * **concurrent:** This RTL package contains implementation of our concurrent modules to support higher task level parallelism. For example, our task manager implementaion exists under this package. Different implementation of task controller can be found under this package.
 * **config:** This utility package provides Scala interfaces for configuring a generator via a dynamically-scoped parameterization library.
-* **control:** In this package we have implemented all of our control logic to support arbitary dataflow between IR-lib's ndoes.
 * **dataflow:** This RTL package contains different small dataflow to test correctness of IR-lib accelerator's design.
 * **dnn:** This RTL package contains our computation nodes to implement application speicfic accelerators for *dnn workloads*. For instance, we have different implementation of *Systolic arraies* in this branch. Another type of computation nodes which exist in this package is our *Typed node* computation nodes.
 * **FPU:** This RTL package provides wrapers around Floating point operations to be integrated with IR-lib design. At this moment, there are two different wrapers in this package. One is a wraper for berkely hardfloat floating point unit. Second, is a wrapper for embeding Alter's IP cores in our design during FPGA mapping process.
