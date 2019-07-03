@@ -111,7 +111,7 @@ In this document, we have explained how someone can start debuging his generated
 
 In this document, we explain how someone can build an accelerator using IR-Lib and then using template files, he can instante a new project and fit the design on and `FPGA`. Moreover, we explain the software interface to talk with the accelerator.
 
-* [**Debug design**](./doc/test-fit.md)
+* [**Test Fitting**](./doc/test-fit.md)
 
 
 
