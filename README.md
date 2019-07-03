@@ -17,11 +17,18 @@ The IR-Lib repository contains code that is used to implement a library modular 
 The IR-Lib code base is itself factored into a number of Scala packages. These packages are all found within the src/main/scala directory. Some of these packages provide Scala utilities for generator configuration, while other contain the actual Chisel RTL generators themselves. Here is a brief description of what can be found in each package:
 
 * **accel:** This RTL package contains all the accelerator code used to wrap a dataflow scala file. The top level file is *Accelerator.scala*. It instantiates and connects three helper blocks: *SimpleReg.scala*, *Cache.scala* and *Core.scala*.
-To read more about IR-lib acceleartor desing and SoC interface, please read the following document:
+
+    To read more about IR-lib acceleartor desing and SoC interface, please read the following document:
 
     [Accelerator Interface](./doc/Soc-Interface.md)
 
 ![Accelerator](https://www.dropbox.com/s/q600al5gt2yo91i/accelerator-resize.png?raw=1)
+
+
+* **node:** This RTL package resamble LLVM IR instruction nodes in our design so that we can target arbitary dataflow of computation nodes from our input sofware IR. All these nodes uses *Handhsaking* interface from our *interface* package to talk with other nodes. The logic within each node can vary from a simple ALU operation like addition to more complicated operations like memory address calculation and so on.
+
+    To read more about IR-lib node's desing, please read the following document:
+    [IR Node design](./doc/Node.md)
 
 * **arbiters:** This RTL package contains a parametrizable set of arbiter implementation that's been used in other packages like: *memory* or *junctions*.
 * **concurrent:** This RTL package contains implementation of our concurrent modules to support higher task level parallelism. For example, our task manager implementaion exists under this package. Different implementation of task controller can be found under this package.
@@ -37,7 +44,6 @@ All the memory operations in the task are time multiplexed over the junction. Th
 We have parameterized the junction implementations in IR-lib so that the designer can control the physical network that the junction is lowered into.
 * **loop:** This RTL package contains implementation of our special *loop* nodes for controling repetetive execution of the same dataflow. Under this packge we have different implementaiton of notino of software loops. The loop structure not only should capture all the live-ins and live-outs to the loop but also it has be able have support for different type of loops like *serial*, *parallel* and different patterns.
 * **memory:** This RTL packge contains our different memory unit implementaiton of memory units. These units vary from different implementation of *Caches* to *Scratchpad memories*. There are also different implementation of IR-lib memory controlers for different type of data like *Scalar, Tensor2D* and so on.
-* **node:** This RTL package resamble LLVM IR instruction nodes in our design so that we can target arbitary dataflow of computation nodes from our input sofware IR. All these nodes uses *Handhsaking* interface from our *interface* package to talk with other nodes. The logic within each node can vary from a simple ALU operation like addition to more complicated operations like memory address calculation and so on.
 * **utility:** This utility package provides a variety of common Scala and Chisel constructs that are re-used across multiple other packages,
 
 
