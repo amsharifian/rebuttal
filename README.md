@@ -101,6 +101,13 @@ This RTL packge contains our different memory unit implementaiton of memory unit
 This utility package provides a variety of common Scala and Chisel constructs that are re-used across multiple other packages,
 
 
+## How to debug your design?
+
+In this document, we have explained how someone can start debuging his generated accelerator using simulation tools.
+
+* [**Debug design**](./doc/debugging.md)
+
+
 ## Getting Started on a Local Ubuntu Machine
 
 This will walk you through installing Chisel and necessary dependencies:
@@ -109,12 +116,6 @@ This will walk you through installing Chisel and necessary dependencies:
 
 * **[Verilator:](https://www.veripool.org/wiki/verilator)**, which compiles Verilog down to C++ for simulation. The included unit testing infrastructure uses this.
 
-
-## How to debug your design?
-
-In this document, we have explained how someone can start debuging his generated accelerator using simulation tools.
-
-* [Debug design](./doc/debugging.md)
 
 ## (Ubuntu-like) Linux
 

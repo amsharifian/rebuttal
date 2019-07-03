@@ -1,4 +1,4 @@
-<img align="right" src="/uploads/b4ba437f678b563bae5a0fca80c6fc03/dandy_lion_by_mutated_sushi-d9fa4b7.png"  width="256">
+<img align="right" src="https://www.dropbox.com/s/uqprojaqmqzcgym/dandy_lion_by_mutated.png?raw=1"  width="256">
 
 __Simulation Tools__
 
@@ -23,7 +23,7 @@ __GTKWave Tips__
 
 The problem with looking at waveform traces is often one of *too much* information rather than too little.  The VCD waveform produced by Chisel simulations contains traces of all logic in a design which can be a bit overwhelming in larger designs.  However, GKTWave organizes the signals in a hierarchy by design block which helps.  Additionally, you can use `Insert Comment` (right click the signal pane) to `visually divide` signal waveforms into groups (see image).  It also has a really useful `regular expression` search to filter available signals down to the ones you actually want to see.  This can be really handy to cut down the noise and just extract the more useful signals like the ready/valid handshaking.
 
-<img align="right" src="/uploads/ed5881742b296b1893028368af25ab69/GTKWave.png">
+<img align="right" src="https://www.dropbox.com/s/2y67tnrtgo1egnr/GTKWave.png?raw=1">
 
 Here are a few regular expression examples that may be helpful:
 
