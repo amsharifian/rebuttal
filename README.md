@@ -19,7 +19,7 @@ The IR-Lib code base is itself factored into a number of Scala packages. These p
 * **accel:** This RTL package contains all the accelerator code used to wrap a dataflow scala file. The top level file is *Accelerator.scala*. It instantiates and connects three helper blocks: *SimpleReg.scala*, *Cache.scala* and *Core.scala*.
 To read more about IR-lib acceleartor desing and SoC interface, please read the following document:
 
-[Accelerator Interface](./doc/Soc-Interface.md)
+    [Accelerator Interface](./doc/Soc-Interface.md)
 
 ![Accelerator](https://www.dropbox.com/s/q600al5gt2yo91i/accelerator-resize.png?raw=1)
 
