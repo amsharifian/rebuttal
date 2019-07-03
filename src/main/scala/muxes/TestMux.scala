@@ -7,13 +7,6 @@ import config._
 import util._
 import interfaces._
 
-/**
-  * Created by vnaveen0 on 7/9/17.
-  */
-
-//class ReadReqT(implicit p: Parameters) extends ReadReq with ValidT {}
-
-
 class  TestMux(NReads: Int)(implicit val p: Parameters) extends Module with CoreParams {
 
   val io = IO(new Bundle {

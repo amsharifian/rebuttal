@@ -1,9 +1,5 @@
 package memory.deprecated
 
-/**
-  * Created by vnaveen0 on 9/7/17.
-  */
-
 import chisel3._
 import chisel3.testers._
 import chisel3.util._

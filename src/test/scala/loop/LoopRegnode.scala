@@ -1,7 +1,3 @@
-/**
-  * @author Amirali Sharifian
-  */
-
 package loop
 
 import chisel3._

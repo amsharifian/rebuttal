@@ -1,9 +1,5 @@
 package memory
 
-/**
-  * Created by vnaveen0 on 10/7/17.
-  */
-
 import scala.math._
 import chisel3._
 import chisel3.util._

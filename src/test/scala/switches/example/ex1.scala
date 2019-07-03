@@ -1,9 +1,5 @@
 package switches.example
 
-/**
-  * Created by vnaveen0 on 11/9/17.
-  */
-
 
 import interfaces._
 import chisel3._

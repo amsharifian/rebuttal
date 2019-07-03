@@ -1,9 +1,5 @@
 package dataflow.fuse
 
-/**
-  * Created by vnaveen0 on 26/6/17.
-  */
-
 import chisel3._
 import chisel3.util._
 

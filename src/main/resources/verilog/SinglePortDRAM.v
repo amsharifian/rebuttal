@@ -1,4 +1,4 @@
-//Developed by Amirali
+//Developed by XXX
 
 module SinglePortDRAM
 #(
@@ -20,7 +20,7 @@ module SinglePortDRAM
 
     initial begin
         //$display("\nLoading DRAM ...");
-        $readmemh("/Users/amirali/git/dandelion-lib/src/main/resources/verilog/memory_trace.mem", mem);
+        $readmemh("/Users/XXX/git/dandelion-lib/src/main/resources/verilog/memory_trace.mem", mem);
     end
 
     // Port A

@@ -1,9 +1,5 @@
 package switches
 
-/**
-  * Created by vnaveen0 on 9/9/17.
-  */
-
 
 import interfaces._
 import chisel3._

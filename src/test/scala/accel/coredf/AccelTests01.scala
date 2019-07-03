@@ -1,9 +1,5 @@
 package accel.coredf
 
-/**
-  * Created by vnaveen0 on 29/6/17.
-  */
-
 // See LICENSE for license details.
 
 import accel._
