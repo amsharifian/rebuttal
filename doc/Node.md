@@ -17,7 +17,7 @@ The add2D function unit communicates with Load left2D, Load right2D and Store re
 
 ### µIR lowered to Chisel source
 
-![Src](https://www.dropbox.com/s/tn3p4cfkeucjin0/Pipeline.png?raw=1)
+![Src](https://www.dropbox.com/s/236a39nuc6xex24/SrcTensor2D.png?raw=1)
 
 ### Handshaking types
 
@@ -31,7 +31,7 @@ The remaining three handshaking interfaces are
 
 There are three other types of pipeline handshaking include i) Multi-Output: In accelerators, there does exist situation when an operations fans-out the result to many sink operations i.e., single producer - multi-consumer pattern. Especially since the operations in µIR's dataflow graph could be manipulating complex data types. In such cases, we define a pipeline handshaking with a list of outputs each of which can be connnected to a different destination node. The number of outputs is a parameter and is set by \WORK\ during instantiation. ii) Compound-operations: Accelerators typically include compound domain-specific function units not found in processors. Such compound function units typically fuse multiple operations and hence require multiple inputs. Handshaking for compound operations defines a list of inputs and outputs, the number of inputs and outputs is a parameter set by \WORK\ when generating the sketch, iii) Ordering: Finally, in certain cases the handshaking may also include control information (e.g., memory ordering\S~\ref{sec:memory}). As shown in the figure a single token bit controls enforces the following sequence Pred$\rightarrow$Op$\rightarrow$Succ of execution.
 
-![Handshakes](https://www.dropbox.com/s/tn3p4cfkeucjin0/Pipeline.png?raw=1)
+![Handshakes](https://www.dropbox.com/s/axdjzha06outlqg/Handshakes.png?raw=1)
 
 ## Balancing dataflow pipelines
 
