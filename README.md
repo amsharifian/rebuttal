@@ -109,6 +109,13 @@ This will walk you through installing Chisel and necessary dependencies:
 
 * **[Verilator:](https://www.veripool.org/wiki/verilator)**, which compiles Verilog down to C++ for simulation. The included unit testing infrastructure uses this.
 
+
+## How to debug your design?
+
+In this document, we have explained how someone can start debuging his generated accelerator using simulation tools.
+
+* [Debug design](./doc/debugging.md)
+
 ## (Ubuntu-like) Linux
 
 Install Java
