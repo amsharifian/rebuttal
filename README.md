@@ -22,7 +22,7 @@ This RTL package contains all the accelerator code used to wrap a dataflow scala
 
 To read more about IR-lib acceleartor desing and SoC interface, please read the following document:
 
-    * [Accelerator Interface](./doc/Soc-Interface.md)
+* [Accelerator Interface](./doc/Soc-Interface.md)
 
 ![Accelerator](https://www.dropbox.com/s/q600al5gt2yo91i/accelerator-resize.png?raw=1)
 
@@ -33,21 +33,21 @@ This RTL package resamble LLVM IR instruction nodes in our design so that we can
 
 To read more about IR-lib node's desing, please read the following document:
 
-    * [IR Node design](./doc/Node.md)
+* [IR Node design](./doc/Node.md)
 
 ### control:
 
 In this package we have implemented all of our control logic to support arbitary dataflow between IR-lib's ndoes.
 
-    * [Controlflow](./doc/Control-flow.md)
+* [Controlflow](./doc/Control-flow.md)
 
 
 ### loop:
 
 This RTL package contains implementation of our special *loop* nodes for controling repetetive execution of the same dataflow. Under this packge we have different implementaiton of notino of software loops. The loop structure not only should capture all the live-ins and live-outs to the loop but also it has be able have support for different type of loops like *serial*, *parallel* and different patterns.
 
-    * [Parallel Loop](./doc/Parallel-loop.md)
-    * [Nested Parallelism](./doc/Nested-loop.md)
+* [Parallel Loop](./doc/Parallel-loop.md)
+* [Nested Parallelism](./doc/Nested-loop.md)
 
 
 ### arbiters:
@@ -91,7 +91,9 @@ All the memory operations in the task are time multiplexed over the junction. Th
 We have parameterized the junction implementations in IR-lib so that the designer can control the physical network that the junction is lowered into.
 
 
-### memory: This RTL packge contains our different memory unit implementaiton of memory units. These units vary from different implementation of *Caches* to *Scratchpad memories*. There are also different implementation of IR-lib memory controlers for different type of data like *Scalar, Tensor2D* and so on.
+### memory:
+
+This RTL packge contains our different memory unit implementaiton of memory units. These units vary from different implementation of *Caches* to *Scratchpad memories*. There are also different implementation of IR-lib memory controlers for different type of data like *Scalar, Tensor2D* and so on.
 
 
 ### utility:
